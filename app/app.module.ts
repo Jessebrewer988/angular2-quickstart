@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { DatepickerModule, AlertModule } from 'ng2-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { UserComponent } from './components/user.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AlertModule.forRoot(),
-    DatepickerModule.forRoot()
-  ],
+  declarations: [AppComponent, UserComponent],
+  imports: [ BrowserModule, FormsModule ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ]
 })
 
 export class AppModule {
