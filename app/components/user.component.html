@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md  m-5 p-2">
+      <h2 style="color:aquamarine;">{{ name }}</h2>
+      <p>Email: {{ email }}</p>
+      <p>Address: {{ address.street }}</p>
+      <p style="margin-left:60px">{{ address.city }}, {{ address.state }}</p>
+      <button (click)="toggleEdit()" class="btn btn-info">
+        {{ showEdit ? "Cancel Edit" : "Edit Details" }}
+      </button>
+    </div>
+
+    <div class="col-md m-5 p-2">
+      <button (click)="toggleHobbies()" class="btn btn-primary">
+        {{ showHobbies ? "Hide Hobbies" : "Show Hobbies" }}
+      </button>
+      <div *ngIf="showHobbies" class="mt-2">
+        <h3>Hobbies</h3>
+        <ul>
+          <li
+            *ngFor="let hobby of hobbies; let i = index"
+            style="margin: 1rem 0 1rem 0;min-width:200px;max-width:200px;width:200px;overflow-x:hidden;background-color:rgb(136, 136, 245);color:white;border-radius:2px;"
+            class="hobby-card p-2"
+          >
+            {{ hobby }}
+            <button
+              style="float:right;"
+              class="btn btn-danger text-white m-1 p-2"
+              (click)="deleteHobby(i)"
+            >
+              X
+            </button>
+          </li>
+        </ul>
+        <form (submit)="addHobby(hobby.value)">
+          <label for="add-hobboy">Add Hobby</label> <br />
+          <input type="text" name="add-hobby" #hobby /><br />
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md  m-5 p-2">
+      <div *ngIf="showEdit">
+        <h3>Edit User</h3>
+        <form>
+          <label for="name">Name: </label> <br />
+          <input type="text" name="name" [(ngModel)]="name" /><br />
+          <label for="email">Email: </label> <br />
+          <input type="text" name="email" [(ngModel)]="email" /><br />
+          <label for="address.street">Street: </label> <br />
+          <input
+            type="text"
+            name="address.street"
+            [(ngModel)]="address.street"
+          /><br />
+          <label for="address.city">City: </label> <br />
+          <input
+            type="text"
+            name="address.city"
+            [(ngModel)]="address.city"
+          /><br />
+          <label for="address.state">State: </label> <br />
+          <input
+            type="text"
+            name="address.state"
+            [(ngModel)]="address.state"
+          /><br />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
