@@ -17,14 +17,14 @@ export class PostsComponent {
     this.postsService.getPosts().subscribe(posts => {
       console.log(posts);
       this.posts = posts,
-      err => {
+     ( err: string) => {
         console.log(err);
       }
     })
   }
 }
 
-interface post {
+interface Post {
   id: number;
   title: string;
   body: string;

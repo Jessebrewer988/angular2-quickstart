@@ -1,17 +1,30 @@
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "module": "commonjs",
+//     "lib": [
+//       "es2015", "dom"
+//     ],
+//     "moduleResolution": "node",
+//     "sourceMap": true,
+//     "emitDecoratorMetadata": true,
+//     "experimentalDecorators": true,
+//     "removeComments": false,
+//     "noImplicitAny": true,
+//     "suppressImplicitAnyIndexErrors": true,
+//     "skipLibCheck": true
+//   }
+// }
 {
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": [
-      "es2015", "dom"
-    ],
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
+    "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "skipLibCheck": true
+    "suppressImplicitAnyIndexErrors": true
   }
 }

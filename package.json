@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Sample of how easy and fast to start hacking with Angular2 and ng2-bootstrap",
   "scripts": {
+    "build": "tsc -p src/",
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
     "tsc": "tsc",
